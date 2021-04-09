@@ -35,7 +35,6 @@ Route::prefix('canvas-ui')->group(function () {
         Route::get('users/{id}', [CanvasUiController::class, 'showUser']);
         Route::get('users/{id}/posts', [CanvasUiController::class, 'getPostsForUser']);
     });
-
 });
 
 Route::get('/{view?}', [CanvasUiController::class, 'index'])

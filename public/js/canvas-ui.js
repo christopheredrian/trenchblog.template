@@ -2061,7 +2061,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   metaInfo: function metaInfo() {
     return {
-      title: 'Canvas'
+      title: 'TrenchBlog'
     };
   },
   data: function data() {
@@ -113797,7 +113797,7 @@ nprogress__WEBPACK_IMPORTED_MODULE_0___default().configure({
   speed: 300
 });
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__.default({
-  base: 'canvas-ui',
+  base: '/',
   mode: 'history',
   routes: _routes__WEBPACK_IMPORTED_MODULE_4__.default
 });

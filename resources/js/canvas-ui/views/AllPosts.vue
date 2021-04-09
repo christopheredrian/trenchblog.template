@@ -83,7 +83,7 @@ export default {
 
     metaInfo() {
         return {
-            title: 'Canvas',
+            title: 'TrenchBlog',
         };
     },
 
