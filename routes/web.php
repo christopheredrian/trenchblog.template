@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CanvasUiController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
+Route::get('/', [BlogsController::class, 'getPosts']);
+Route::get('posts/{slug}', [BlogsController::class, 'getPost'])->name('posts.getPost');
+
+
 Route::prefix('canvas-ui')->group(function () {
     Route::prefix('api')->group(function () {
         Route::get('posts', [CanvasUiController::class, 'getPosts']);
@@ -37,6 +38,6 @@ Route::prefix('canvas-ui')->group(function () {
     });
 });
 
-Route::get('/{view?}', [CanvasUiController::class, 'index'])
+Route::get('old/{view?}', [CanvasUiController::class, 'index'])
     ->where('view', '(.*)')
     ->name('canvas-ui');

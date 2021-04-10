@@ -38,7 +38,7 @@ class CanvasUiController extends Controller
      */
     public function getPosts(Request $request): LengthAwarePaginator
     {
-        return Post::latest()->published()->with('user', 'topic')->paginate();
+        return Post::query()->latest()->published()->with('user', 'topic')->paginate();
     }
 
     /**
