@@ -40,4 +40,8 @@ class Sidebar extends Component
             'popular_posts' => $popular_posts,
         ]);
     }
+
+    private function getPopularPosts(){
+
+    }
 }
