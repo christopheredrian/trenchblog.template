@@ -15,8 +15,8 @@
              src="https://avatars.githubusercontent.com/u/9636858?v=4" alt="Card image cap">
     </div>
 
-    <div class="px-5 text-center mt-4 mb-3 mt-5">
-        <h3 class="mt-3">David Craig</h3>
+    <div class="px-3 text-center mt-4 mb-3 mt-5 pb-2">
+        <h3 class="mt-3">Donmari Espiritu</h3>
         <p class="text-center text-secondary">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt
             repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias
