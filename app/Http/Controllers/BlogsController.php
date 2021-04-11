@@ -24,17 +24,16 @@ class BlogsController extends Controller
      * @param $slug
      * @return JsonResponse
      */
-    public function getPost($slug): JsonResponse
+    public function getPost($slug)
     {
-        $post = Post::with('user', 'tags', 'topic')->firstWhere('slug', $slug);
+        $post = Post::with('user', 'tags', 'topic')->firstWhere('slug', "post-$slug");
 
         // dd($post);
 
-        dd('@getPost (details)');
         if ($post) {
             event(new PostViewed($post));
+            return view('blogs.details', ['post' => $post]);
 
-            return response()->json($post, 200);
         } else {
             return response()->json(null, 404);
         }
