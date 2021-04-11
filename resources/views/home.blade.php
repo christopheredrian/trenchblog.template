@@ -2,10 +2,17 @@
 
 @section('content')
 
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="mb-4">Latest Posts</h2>
+
+        </div>
+    </div>
+
     <div class="row">
         @foreach($posts as $post)
             <div class="col-md-6 mb-5">
-                <a class="post-card-link" href="{{route('posts.getPost', $post->id)}}">
+                <a class="post-card-link" href="{{route('posts.getPost', $post->slug)}}">
                     <div class="card">
                         <img class="card-img-top" src="{{$post->featured_image}}"
                              alt="{{$post->featured_image_caption}}">

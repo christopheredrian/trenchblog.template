@@ -89,6 +89,9 @@
 
 
     </style>
+
+    @yield('style')
+
 </head>
 <body>
 
@@ -129,12 +132,6 @@
 
         </div>
 
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <h2 class="mb-4">Latest Posts</h2>
-
-            </div>
-        </div>
 
         <div class="row">
 

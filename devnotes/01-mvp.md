@@ -3,16 +3,17 @@
 ## Checklist
 
 ### Public 
-1. Main page
-2. Post details
-3. Filter by post id 
-4. Filter by tags
-5. Filter by Topics 
+- ✅ Main page
+- ✅ Post details
+- Filter by post id 
+- Filter by tags
+- Filter by Topics
+- ✅ Default slug issue 
 
 ### Admin Page
 
-1. S3 integration 
-2. Create posts
-3. Create tags
-4. Create topics
-5. Image upload
+- S3 integration 
+- ✅  Create posts
+- ✅  Create tags
+- ✅  Create topics
+- ✅  Image upload

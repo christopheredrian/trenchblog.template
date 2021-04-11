@@ -14,8 +14,10 @@ class BlogsController extends Controller
     public function getPosts()
     {
 
+        $posts = Post::query()->latest()->published()->paginate(2);
+
         return view('home', [
-            'posts' => Post::query()->latest()->published()->paginate(2),
+            'posts' => $posts,
         ]);
     }
 
@@ -26,9 +28,7 @@ class BlogsController extends Controller
      */
     public function getPost($slug)
     {
-        $post = Post::with('user', 'tags', 'topic')->firstWhere('slug', "post-$slug");
-
-        // dd($post);
+        $post = Post::with('user', 'tags', 'topic')->firstWhere('slug', "$slug");
 
         if ($post) {
             event(new PostViewed($post));
