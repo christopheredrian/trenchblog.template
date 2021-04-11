@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Canvas\Events\PostViewed;
 use Canvas\Models\Post;
-use Canvas\Services\StatsAggregator;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
-class BlogsController extends Controller
+class PublicPostsController extends Controller
 {
     public function getPosts()
     {
@@ -24,7 +24,7 @@ class BlogsController extends Controller
 
     /**
      * @param $slug
-     * @return JsonResponse
+     * @return Application|Factory|View|JsonResponse
      */
     public function getPost($slug)
     {
@@ -32,7 +32,7 @@ class BlogsController extends Controller
 
         if ($post) {
             event(new PostViewed($post));
-            return view('blogs.details', ['post' => $post]);
+            return view('posts.details', ['post' => $post]);
 
         } else {
             return response()->json(null, 404);
