@@ -1,5 +1,14 @@
 @extends('layouts.layout')
 
+@section('style')
+{{--    <style>--}}
+{{--        .home-banner {--}}
+{{--            max-height: 400px;--}}
+{{--            max-width: 100%;--}}
+{{--        }--}}
+{{--    </style>--}}
+@endsection
+
 @section('pre-content')
 
     <div class="col-md-12 mb-5">
@@ -12,13 +21,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://picsum.photos/1366/600" class="d-block w-100" alt="...">
+                    <img src="https://growingbokchoy.s3.amazonaws.com/assets/getaway.jpg " class="d-block w-100 home-banner" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/1366/600" class="d-block w-100" alt="...">
+                    <img src="https://growingbokchoy.s3.amazonaws.com/assets/knowledge.jpg" class="d-block w-100 home-banner" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/1366/600" class="d-block w-100" alt="...">
+                    <img src="https://growingbokchoy.s3.amazonaws.com/assets/ruby-falls.jpg" class="d-block w-100 home-banner" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
