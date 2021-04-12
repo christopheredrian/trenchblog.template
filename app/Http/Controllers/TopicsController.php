@@ -21,10 +21,12 @@ class TopicsController extends Controller
     public function postsByTopic($slug)
     {
 
+        /** @var Topic $topic */
         $topic = Topic::query()->where('slug', $slug)->firstOrFail();
 
         return view('topics.posts', [
-            'topic' => $topic
+            'topic' => $topic,
+            'posts' => $topic->getActivePosts(),
         ]);
     }
 }

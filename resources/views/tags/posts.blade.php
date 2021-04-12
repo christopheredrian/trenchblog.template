@@ -11,7 +11,7 @@
 
     <div class="row mt-3">
 
-        @foreach($tag->posts as $post)
+        @foreach($posts as $post)
             <div class="col-md-6 mb-5">
                 <x-post-card :post="$post" href="{{route('posts.slug', $post->slug)}}"></x-post-card>
             </div>
