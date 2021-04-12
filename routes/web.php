@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PublicPostsController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CanvasUiController;
+use App\Http\Controllers\TopicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PublicPostsController::class, 'getPosts']);
-Route::get('posts/{slug}', [PublicPostsController::class, 'getPost'])->name('posts.getPost');
+Route::get('/', [PostsController::class, 'index']);
+Route::get('posts/{slug}', [PostsController::class, 'post'])->name('posts.slug');
+Route::get('topics', [TopicsController::class, 'index'])->name('posts.topics');
+Route::get('topics/{slug}/posts', [TopicsController::class, 'postsByTopic'])->name('topic.posts');
 
 
 Route::prefix('canvas-ui')->group(function () {

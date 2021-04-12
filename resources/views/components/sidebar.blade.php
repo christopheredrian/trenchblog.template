@@ -1,22 +1,25 @@
 <div class="row mb-5">
     <div class="col-md-12">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search Post ...">
-            <div class="input-group-append">
-                <span class="input-group-text">🔍</span>
+        <form action="/">
+            <div class="input-group mb-3">
+                <input type="text" name="q" class="form-control" placeholder="Search Post ..."
+                       value="{{request()->get('q')}}">
+                <div class="input-group-append cursor-pointer">
+                    <span class="input-group-text">🔍</span>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
 <div class="row mb-2 border bio-wrapper">
     <div class="col-md-12 text-center">
         <img style="max-width: 120px" class="rounded-circle img-fluid bio-image"
-             src="https://avatars.githubusercontent.com/u/9636858?v=4" alt="Card image cap">
+             src="https://growingbokchoy.s3.amazonaws.com/production/public/canvas/images/zrdVmPvNVZ0ZOf9rg6wOGQc8ToqzowZhjDkgfe9Q.png" alt="Card image cap">
     </div>
 
     <div class="px-3 text-center mt-4 mb-3 mt-5 pb-2">
-        <h3 class="mt-3">Donmari Espiritu</h3>
+        <h3 class="mt-3">Hey, I'm Donmari ❤️</h3>
         <p class="text-center text-secondary">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt
             repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias
@@ -45,7 +48,7 @@
 
 
 @foreach($popular_posts as $post)
-    <a class="post-card-link" href="{{route('posts.getPost', $post->slug ?? '')}}">
+    <a class="post-card-link" href="{{route('posts.slug', $post->slug ?? '')}}">
         <div class="row mb-3">
             <div class="col-md-4">
                 <img class="img-fluid" src="{{$post->featured_image}}"
@@ -74,18 +77,12 @@
 
 <div class="row mb-3">
     <div class="col-md-12">
-        <div class="mb-3 border-bottom pb-2 d-flex justify-content-between">
-            <a href="">Agriculture</a>
-            <span>(30)</span>
-        </div>
-        <div class="mb-3 border-bottom pb-2 d-flex justify-content-between">
-            <a href="">Gardening</a>
-            <span>(3)</span>
-        </div>
-        <div class="mb-3 border-bottom pb-2 d-flex justify-content-between">
-            <a href="">Urban Gardening</a>
-            <span>(2)</span>
-        </div>
+        @foreach($topics as $topic)
+            <div class="mb-3 border-bottom pb-2 d-flex justify-content-between">
+                <a href="{{route('topic.posts', $topic->name)}}">{{$topic->name}}</a>
+                <span>({{$topic->total_posts}})</span>
+            </div>
+        @endforeach
     </div>
 </div>
 

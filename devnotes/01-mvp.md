@@ -14,16 +14,17 @@
 
 
 ### Admin Page
-
-- ✅ S3 integration 
+ 
 - ✅  Create posts
 - ✅  Create tags
 - ✅  Create topics
 - ✅  Image upload
+    - ✅ via s3
 
 ## Phase II 
 
+- Footer
 - Email subscribe
-    - s3 integration
+    - SES integration
 - Previous / Next 
 - Polls 

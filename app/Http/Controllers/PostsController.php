@@ -4,20 +4,31 @@ namespace App\Http\Controllers;
 
 use Canvas\Events\PostViewed;
 use Canvas\Models\Post;
+use Canvas\Models\Topic;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
-class PublicPostsController extends Controller
+class PostsController extends Controller
 {
-    public function getPosts()
+    public function index(Request $request)
     {
 
-        $posts = Post::query()->latest()->published()->paginate(2);
+        /** @var Builder $query */
+        $query = Post::query()->latest()->published();
+
+        if ($q = $request->input('q')) {
+            $query->where(function (Builder $query) use ($q) {
+                $query->where('title', 'like', "%$q%");
+            });
+        }
+
 
         return view('home', [
-            'posts' => $posts,
+            'posts' => $query->paginate(2),
         ]);
     }
 
@@ -26,7 +37,7 @@ class PublicPostsController extends Controller
      * @param $slug
      * @return Application|Factory|View|JsonResponse
      */
-    public function getPost($slug)
+    public function post($slug)
     {
         $post = Post::with('user', 'tags', 'topic')->firstWhere('slug', "$slug");
 

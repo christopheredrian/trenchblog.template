@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Topic;
 use Canvas\Models\Post;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -27,8 +28,8 @@ class Sidebar extends Component
     public function render()
     {
         $popular_posts = Post::query()
-            ->selectRaw("canvas_posts.*, COUNT(1) AS total_views")
             ->join('canvas_visits', 'canvas_visits.post_id', '=', 'canvas_posts.id', 'inner')
+            ->selectRaw("canvas_posts.*, COUNT(1) AS total_views")
             ->whereNotNull('canvas_posts.published_at')
             ->groupBy('canvas_posts.id')
             ->orderBy('total_views', 'desc')
@@ -38,6 +39,7 @@ class Sidebar extends Component
 
         return view('components.sidebar', [
             'popular_posts' => $popular_posts,
+            'topics' => Topic::getTopicsWithCounts()
         ]);
     }
 
