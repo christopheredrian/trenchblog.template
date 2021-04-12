@@ -18,17 +18,17 @@
              src="https://growingbokchoy.s3.amazonaws.com/production/public/canvas/images/zrdVmPvNVZ0ZOf9rg6wOGQc8ToqzowZhjDkgfe9Q.png" alt="Card image cap">
     </div>
 
-    <div class="px-3 text-center mt-4 mb-3 mt-5 pb-2">
+    <div class="px-3 text-center mt-4 mb-3 mt-5 pb-2 py-1">
         <h3 class="mt-3">Hey, I'm Donmari ❤️</h3>
         <p class="text-center text-secondary">
             I’m the mom of a vegetable, baby Bokchoy! I’m here to share my motherhood journey as a first time, stay-at-home mom.
         </p>
     </div>
 
-    <div class="col-md-12 text-center mb-4">
-        <button class="btn btn-primary">
+    <div class="col-md-12 text-center mb-4 text-white">
+        <a class="btn btn-primary" href="{{route('pages.about')}}">
             Read my bio
-        </button>
+        </a>
     </div>
 </div>
 
@@ -77,7 +77,7 @@
     <div class="col-md-12">
         @foreach($topics as $topic)
             <div class="mb-3 border-bottom pb-2 d-flex justify-content-between">
-                <a href="{{route('topic.posts', $topic->name)}}">{{$topic->name}}</a>
+                <a href="{{route('topics.posts', $topic->name)}}">{{$topic->name}}</a>
                 <span>({{$topic->total_posts}})</span>
             </div>
         @endforeach

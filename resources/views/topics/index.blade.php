@@ -18,7 +18,7 @@
                 @foreach($topics as $topic)
 
                     <li>
-                        <a href="{{route('topic.posts', $topic->name)}}"
+                        <a href="{{route('topics.posts', $topic->name)}}"
                            class="pl-0 list-group-item d-flex justify-content-between align-items-center border-0">
                             {{$topic->name}}
                             <span class="badge badge-primary badge-pill">{{$topic->total_posts}}</span>

@@ -6,11 +6,11 @@
 - ✅ Main page
 - ✅ Post details
 - ✅ Filter by post id 
-- Filter by tags
-- Filter by Topics
-- Search bar 
+- ✅ Filter by tags
+- ✅ Filter by Topics
+- ✅ Search bar 
 - ✅ Default slug issue
-- UI Updates 
+- ✅ Initial UI Updates 
 
 
 ### Admin Page
@@ -26,5 +26,9 @@
 - Footer
 - Email subscribe
     - SES integration
-- Previous / Next 
+- Posts: 
+    - Previous / Next Feature  
 - Polls 
+    - via trenchdevs embed 
+- Comment Box 
+    - via trenchdevs embed 
