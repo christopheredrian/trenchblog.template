@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CanvasUiController;
 use App\Http\Controllers\TagController;
@@ -22,6 +23,7 @@ Route::get('posts/{slug}', [PostsController::class, 'post'])->name('posts.slug')
 Route::get('topics', [TopicsController::class, 'index'])->name('posts.topics');
 Route::get('topics/{slug}/posts', [TopicsController::class, 'postsByTopic'])->name('topic.posts');
 Route::get('tags/{slug}/posts', [TagController::class, 'postsByTag'])->name('tags.posts');
+Route::view('about', 'pages.about')->name('pages.about');
 
 
 Route::prefix('canvas-ui')->group(function () {

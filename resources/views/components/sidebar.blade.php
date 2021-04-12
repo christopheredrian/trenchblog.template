@@ -21,9 +21,7 @@
     <div class="px-3 text-center mt-4 mb-3 mt-5 pb-2">
         <h3 class="mt-3">Hey, I'm Donmari ❤️</h3>
         <p class="text-center text-secondary">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt
-            repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias
-            minus.
+            I’m the mom of a vegetable, baby Bokchoy! I’m here to share my motherhood journey as a first time, stay-at-home mom.
         </p>
     </div>
 
