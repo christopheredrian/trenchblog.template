@@ -25,7 +25,7 @@
 
     <div class="row mt-5">
         <div class="col text-secondary">
-            <img style="max-width: 30px" src="{{$post->user->default_avatar}}" alt="Author avatar"
+            <img style="max-width: 30px" src="{{$post->user->avatar ?: $post->user->default_avatar}}" alt="Author avatar"
                  class="img-fluid rounded-circle"> •
             <span>{{$post->user->name}}</span> •
             <span>{{$post->published_at->diffForHumans()}}</span>
