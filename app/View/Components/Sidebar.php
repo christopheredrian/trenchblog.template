@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Tag;
 use App\Models\Topic;
 use Canvas\Models\Post;
 use Closure;
@@ -39,7 +40,8 @@ class Sidebar extends Component
 
         return view('components.sidebar', [
             'popular_posts' => $popular_posts,
-            'topics' => Topic::getTopicsWithCounts()
+            'topics' => Topic::getTopicsWithCounts(),
+            'tags' => Tag::getTagsWithCounts(),
         ]);
     }
 

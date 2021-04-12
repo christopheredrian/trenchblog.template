@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Topic extends \Canvas\Models\Topic
+class Tag extends \Canvas\Models\Tag
 {
     use HasFactory;
 
-    public static function getTopicsWithCounts()
+
+    public static function getTagsWithCounts()
     {
 
-        return DB::table('canvas_topics AS t')
-            ->join('canvas_posts_topics AS cpt', 'cpt.topic_id', '=', 't.id', 'left')
+        return DB::table('canvas_tags AS t')
+            ->join('canvas_posts_tags AS cpt', 'cpt.tag_id', '=', 't.id', 'left')
             ->join('canvas_posts AS p', 'p.id', '=', 'cpt.post_id', 'left')
             ->groupBy('t.id')
             ->selectRaw('t.*, COUNT(1) AS total_posts')

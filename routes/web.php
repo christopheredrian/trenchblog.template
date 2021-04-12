@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CanvasUiController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\TopicsController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('/', [PostsController::class, 'index']);
 Route::get('posts/{slug}', [PostsController::class, 'post'])->name('posts.slug');
 Route::get('topics', [TopicsController::class, 'index'])->name('posts.topics');
 Route::get('topics/{slug}/posts', [TopicsController::class, 'postsByTopic'])->name('topic.posts');
+Route::get('tags/{slug}/posts', [TagController::class, 'postsByTag'])->name('tags.posts');
 
 
 Route::prefix('canvas-ui')->group(function () {

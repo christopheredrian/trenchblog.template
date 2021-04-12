@@ -132,8 +132,7 @@
 
                 <div class="nav-links text-center border-bottom pb-4 mb-5">
                     <a href="/">Home</a> •
-                    <a href="{{route('posts.topics')}}">Topics</a> •
-                    <a href="">Tags</a> •
+                    <a href="{{route('posts.topics')}}">Topics & Tags</a> •
                     <a href="">About</a>
                 </div>
             </div>

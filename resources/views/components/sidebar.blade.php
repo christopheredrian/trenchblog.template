@@ -99,11 +99,8 @@
 
 <div class="row mb-3">
     <div class="col-md-12">
-        <a class="badge badge-primary badge-text" href="#">Bokchoy</a>
-        <a class="badge badge-primary badge-text" href="#">Asparagus</a>
-        <a class="badge badge-primary badge-text" href="#">Tomato</a>
-        <a class="badge badge-primary badge-text" href="#">Potato</a>
-        <a class="badge badge-primary badge-text" href="#">Mushroom</a>
-        <a class="badge badge-primary badge-text" href="#">Banana</a>
+        @foreach($tags as $tag)
+            <a class="badge badge-primary badge-text" href="{{route('tags.posts', $tag->slug)}}">{{$tag->name}}</a>
+        @endforeach
     </div>
 </div>

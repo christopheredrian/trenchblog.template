@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Canvas\Models\Topic;
+use App\Models\Tag;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class TopicsController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
 
-        $query = Topic::query();
-
-        if ($q = $request->input('q')) {
-            $query->where('name', 'like', "%$q%");
-        }
-
         return view('topics.index', [
-            'topics' => $query->get()
+            'topics' => Topic::getTopicsWithCounts(),
+            'tags' => Tag::getTagsWithCounts(),
         ]);
     }
 
